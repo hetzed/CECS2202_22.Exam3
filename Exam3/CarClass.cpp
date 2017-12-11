@@ -54,5 +54,33 @@ void Car::brake()
 
 int main()
 {
+	int init;
+	int year;
+	string make;
 
+	cout << "Enter car's year" << endl;
+	cin >> year;
+
+	cout << "Enter car's model" << endl;
+	cin >> make;
+
+	//Class Objects
+	Car car(year, make);
+	
+	for (init = 0; init < 6; init++)
+	{
+		car.accelerate();
+		cout << car.getMake() << "" << car.getYear() << "The car is accelerating at" << car.getSpeed() << endl;
+	}
+	cout << "The car's speed current speed is " << car.getSpeed() << " mph." << endl;
+
+	for (init = 0; init<6; init++)
+	{
+		car.brake();
+		cout << car.getMake() << "" << car.getYear() << "The car is accelerating at" << car.getSpeed() << endl;
+	}
+	cout << "The car's speed is now " << car.getSpeed() << " mph." << endl;
+
+	system("pause");
+	return 0;
 }
